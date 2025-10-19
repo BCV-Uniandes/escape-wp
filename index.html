@@ -369,44 +369,7 @@
     </div>
   </section>
 
-  <!-- =====================
-       GETTING STARTED
-       ===================== -->
-  <section id="getting-started" class="section">
-    <div class="container is-max-desktop">
-      <h3 class="title is-4">📦 Getting Started</h3>
-      <div class="content">
-        <p><strong>1. Clone the ESCAPE repository.</strong></p>
-        <pre><code>git clone https://github.com/BCV-Uniandes/ESCAPE.git</code></pre>
 
-        <p><strong>2. Install general dependencies.</strong></p>
-        <p>To set up the environment and install the necessary dependencies, run the following commands:</p>
-        <pre><code>conda env create -f ESCAPE.yml
-conda activate ESCAPE_env</code></pre>
-      </div>
-      <hr />
-    </div>
-  </section>
-
-  <!-- =====================
-       REPRODUCING RESULTS
-       ===================== -->
-  <section id="reproducing" class="section">
-    <div class="container is-max-desktop">
-      <h3 class="title is-4">🧪 Reproducing ESCAPE Benchmark Results</h3>
-      <div class="content">
-        <p>To reproduce the <strong>ESCAPE Benchmark</strong> results on the ESCAPE Dataset:</p>
-        <ol>
-          <li>Update the paths to both model checkpoints in the <code>src/ensemble.sh</code> executable script.</li>
-          <li>Set the model architecture in the <code>test_ESCAPE.py</code> file.</li>
-          <li>Run the following command:</li>
-        </ol>
-        <pre><code>bash src/ensemble.sh</code></pre>
-        <p>This script loads both trained models, averages their outputs, and computes the final metrics over the test set.</p>
-      </div>
-      <hr />
-    </div>
-  </section>
 
   <!-- =====================
        ESCAPE BASELINE
@@ -426,113 +389,8 @@ conda activate ESCAPE_env</code></pre>
     </div>
   </section>
 
-  <!-- =====================
-       STRUCTURAL INPUTS
-       ===================== -->
-  <section id="structural-inputs" class="section">
-    <div class="container is-max-desktop">
-      <h3 class="title is-4">🧬 Structural Inputs</h3>
-      <div class="content">
-        <p>
-          For the structural branch, each peptide is represented as a 224×224 distance matrix, where each element corresponds to the Euclidean distance between Cα atoms in the 3D conformation. We extract these structures from <a href="https://www.uniprot.org/" target="_blank" rel="noopener">UniProt</a> when available, or predict them using <a href="https://github.com/RosettaCommons/RoseTTAFold" target="_blank" rel="noopener">RosettaFold</a> or <a href="https://github.com/google-deepmind/alphafold3/tree/main" target="_blank" rel="noopener">AlphaFold3</a>. The resulting distance matrices are precomputed for all peptides and stored as <strong>.npy files</strong>.
-        </p>
-        <ol>
-          <li><strong>Download distance matrices.</strong> Test-set matrices: <a href="https://drive.google.com/drive/folders/1e30YX0eztjauwTM5EJ00me-2JS_0iYSF?usp=sharing" target="_blank" rel="noopener">Google Drive link</a>.</li>
-          <li><strong>Set the distance matrix path.</strong> Modify the path to the folder containing the distance matrices in the <code>test.py</code> file to ensure the model can load the correct structural inputs during evaluation.</li>
-        </ol>
-      </div>
-      <hr />
-    </div>
-  </section>
+ 
 
-  <!-- =====================
-       EVALUATION
-       ===================== -->
-  <section id="evaluation" class="section">
-    <div class="container is-max-desktop">
-      <h3 class="title is-4">📊 ESCAPE Baseline Evaluation</h3>
-      <div class="content">
-        <p>
-          We evaluate the <strong>ESCAPE Baseline</strong> on the <strong>ESCAPE Benchmark</strong> using two standard metrics for multilabel classification: F1-score and mean Average Precision (mAP). This model achieves state-of-the-art overall performance, outperforming six existing AMP classifiers across both metrics. To reproduce the evaluation of the ESCAPE Baseline:
-        </p>
-        <ol>
-          <li><strong>Download trained model checkpoints.</strong> Get the <code>.pth</code> files for both folds: <a href="https://drive.google.com/drive/folders/1e30YX0eztjauwTM5EJ00me-2JS_0iYSF?usp=sharing" target="_blank" rel="noopener">Google Drive link</a>.</li>
-          <li><strong>Update the script configuration.</strong> Set the correct paths to both checkpoints in <code>src/ensemble.sh</code>, and ensure <code>MultiModalClassifier</code> in <code>src/models.py</code> is initialized in <code>src/test_ESCAPE.py</code>.</li>
-          <li><strong>Run ensemble evaluation.</strong></li>
-        </ol>
-        <pre><code>bash src/ensemble.sh</code></pre>
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================
-       DATASET CARD (brief)
-       ===================== -->
-  <section id="dataset" class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Dataset Card</h2>
-          <div class="content has-text-justified">
-            <p><strong>Sources:</strong> ESCAPE harmonizes multiple curated AMP datasets into a single standardized format. Each source is cited in our paper and included with license-compliant access instructions.</p>
-            <p><strong>Splits:</strong> Train/Validation/Test sets with stratification by activity types and data provenance where feasible.</p>
-            <p><strong>Licensing:</strong> Redistribution follows original dataset terms. Some datasets require external download.</p>
-            <p><strong>Download:</strong> See the <a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank" rel="noopener">Code repository</a> for scripts, checksums, and data loaders.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =====================
-       LEADERBOARD (placeholder)
-       ===================== -->
-  <section id="leaderboard" class="section">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-full-width">
-          <h2 class="title is-3">Leaderboard (Example)</h2>
-          <div class="table-container">
-            <table class="table is-striped is-hoverable is-fullwidth">
-              <thead>
-                <tr>
-                  <th>Model</th>
-                  <th>AMP Detect AUC</th>
-                  <th>Type mAP</th>
-                  <th>Type Macro-F1</th>
-                  <th>Paper / Code</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Baseline (BiLSTM)</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td><a href="#">repo</a></td>
-                </tr>
-                <tr>
-                  <td>Transformer (ProtBERT ft.)</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td><a href="#">repo</a></td>
-                </tr>
-                <tr>
-                  <td>Multimodal (Seq + Structure)</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td>—</td>
-                  <td><a href="#">repo</a></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="is-size-6">Submit results via pull request or form (see <a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank" rel="noopener">instructions</a>).</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- =====================
        BIBTEX
