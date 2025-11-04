@@ -40,12 +40,12 @@
     /* Space between authors and affiliation */
     .publication-authors + .publication-authors { margin-top: 1rem !important; }
 
-    /* Short, centered section divider */
+    /* Short, centered section divider with compact spacing */
     .section-divider {
       border: none;
       border-top: 1px solid #ddd;
       width: 60%;
-      margin: 2rem auto;
+      margin: 0.5rem auto; /* compact space before/after each line */
     }
 
     /* Force white text inside the dark action buttons (and on hover/focus) */
@@ -302,6 +302,9 @@
       </p>
     </div>
   </section>
+
+  <!-- short divider BEFORE BibTeX (added, compact spacing) -->
+  <hr class="section-divider" />
 
   <!-- BIBTEX -->
   <section class="section" id="BibTeX">
