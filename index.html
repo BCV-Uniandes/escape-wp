@@ -190,7 +190,7 @@
       </div>
 
 
-```html
+
       <!-- Overview Video -->
       <div id="video" class="columns is-centered has-text-centered" style="margin-top: 2rem;">
         <div class="column is-four-fifths">
@@ -282,20 +282,19 @@
       <div class="content has-text-justified">
         <p>
           The <strong>ESCAPE Baseline</strong> is a dual-branch transformer that classifies antimicrobial peptides using both sequence and structural information.
-          <br><br>
-          <strong>Sequence branch.</strong> Amino-acid tokens are embedded and processed by a Transformer encoder to model local and long-range dependencies across the peptide chain.
-          <br><br>
-          <strong>Structure branch.</strong> We derive pairwise distance matrices from available 3D information and tokenize them into patches that a parallel Transformer encoder processes to capture spatial organization.
-          <br><br>
-          <strong>Multimodal fusion.</strong> A bidirectional cross-attention layer lets sequence attend to structure and vice versa, producing fused representations for multilabel classification across antibacterial, antifungal, antiviral, and antiparasitic activities.
-          <br><br>
+        </p>
+
+        <p class="has-text-centered" style="margin: 0.5rem 0;">
+          <img src="./static/images/architecture.png" width="800" alt="ESCAPE baseline architecture" />
+        </p>
+
+        <p style="margin: 0;">
+          <strong>Sequence branch.</strong> Amino-acid tokens are embedded and processed by a Transformer encoder to model local and long-range dependencies across the peptide chain.<br>
+          <strong>Structure branch.</strong> We derive pairwise distance matrices from available 3D information and tokenize them into patches that a parallel Transformer encoder processes to capture spatial organization.<br>
+          <strong>Multimodal fusion.</strong> A bidirectional cross-attention layer lets sequence attend to structure and vice versa, producing fused representations for multilabel classification across antibacterial, antifungal, antiviral, and antiparasitic activities.<br>
           <strong>Training & evaluation.</strong> We use AdamW, standard regularization, and the same folds/metrics defined by the ESCAPE benchmark; ensembling across folds yields the reported scores. In ablations, the multimodal model consistently outperforms sequence-only or structure-only variants on both F1 and mAP, highlighting the complementary value of structural cues.
         </p>
       </div>
-
-      <p class="has-text-centered">
-        <img src="./static/images/architecture.png" width="800" alt="ESCAPE baseline architecture" />
-      </p>
     </div>
   </section>
 
