@@ -291,7 +291,16 @@
       </div>
 
       <p class="has-text-centered">
-        <img src="./static/images/STATS.png" width="800" alt="ESCAPE graphical abstract" />
+        <img src="./static/images/STATS.png" width="800" alt="ESCAPE dataset statistics" />
+      </p>
+
+      <!-- NEW: concise figure caption and dataset construction summary -->
+      <p class="content has-text-centered is-size-6" style="margin-top: 0.75rem;">
+        <strong>Figure 2.</strong> Overview of ESCAPE Dataset composition and statistics: (a) multilabel distribution across antibacterial, antifungal, antiviral, and antiparasitic classes; (b) sequence-length distributions for AMPs and non-AMPs; and (c) counts across train/validation folds and the test set.
+      </p>
+
+      <p class="content has-text-justified" style="margin-top: 0.5rem;">
+        To build ESCAPE, we integrated experimentally validated and manually curated peptides from 27 public databases—BIOPEP-UWM, CPPsite 2.0, CAMPR3, TumorHoPe, APD3, SPdb, ParaPep, CancerPPD, BrainPreps, Quorumpeps, YADAMP, LAMP2, Milkampdb, DADP, AntiTbPdb, PeptideDB, NeuroPrep, SATPdb, BioDADPep, NeuroPedia, DFBP, dbAMP 3.0, DRAMP 4.0, AVPdb, Hemolytik, DBAASP v3, and UniProt—covering antibacterial, antifungal, antiviral, and antiparasitic activities and mechanisms such as membrane disruption, inhibition of cell-wall biosynthesis, and interference with viral assembly. Non-AMP sequences follow the TransImbAMP strategy: selection from UniProt and curated non-antimicrobial sources with strict exclusion of keywords (e.g., “membrane,” “toxic,” “secretory,” “defensive,” “antibiotic,” “anticancer,” “antiviral,” “antifungal”) to form a high-confidence negative set.
       </p>
 
       <p class="content">
