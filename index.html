@@ -30,19 +30,40 @@
   <script src="./static/js/index.js"></script>
 
   <style>
+    /* Tighten intro spacing a bit */
     #intro.section { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
     #intro .content { margin: 0 !important; }
     #intro .content p { margin: 0.5rem 0 !important; }
     .hero.teaser .hero-body { padding-bottom: 1rem !important; }
     #abstract.section { padding-top: 0.75rem !important; }
 
+    /* Space between authors and affiliation */
     .publication-authors + .publication-authors { margin-top: 1rem !important; }
 
+    /* Short, centered section divider */
     .section-divider {
       border: none;
       border-top: 1px solid #ddd;
       width: 60%;
       margin: 2rem auto;
+    }
+
+    /* Force white text inside the dark action buttons (and on hover/focus) */
+    .publication-links .button.is-dark,
+    .publication-links .button.is-dark span,
+    .publication-links .button.is-dark i {
+      color: #fff !important;
+    }
+    .publication-links .button.is-dark:hover,
+    .publication-links .button.is-dark:focus,
+    .publication-links .button.is-dark:active {
+      color: #fff !important;
+    }
+    /* Also guard against link default color inside buttons */
+    .publication-links .button.is-dark a,
+    .publication-links .button.is-dark a span {
+      color: #fff !important;
+      text-decoration: none !important;
     }
   </style>
 </head>
@@ -95,10 +116,50 @@
           and <a href="https://scholar.google.com/citations?user=k0nZO90AAAAJ&hl=es" target="_blank">Pablo Arbeláez</a>
         </div>
 
-        <div class="is-size-5 publication-authors" style="margin-top: 1rem;">
+        <!-- Space between authors and affiliation is controlled via CSS above -->
+        <div class="is-size-5 publication-authors">
           Universidad de Los Andes, Colombia<br>
           <strong>The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025)</strong>
         </div>
+
+        <!-- Links -->
+        <div class="column has-text-centered" style="margin-top: 1rem;">
+          <div class="publication-links">
+            <span class="link-block">
+              <a id="paper" href="#" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                <span>Paper (PDF)</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>arXiv</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="#video" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-youtube"></i></span>
+                <span>Video</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a id="code" href="https://github.com/BCV-Uniandes/ESCAPE" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C69MCD"
+                 class="external-link button is-normal is-rounded is-dark"
+                 target="_blank" rel="noopener">
+                <span class="icon"><i class="far fa-images"></i></span>
+                <span>Data</span>
+              </a>
+            </span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -107,7 +168,11 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img src="./static/images/graphicalAbstract2.png" alt="Graphical Abstract" style="width:100%;border-radius:8px;" />
+        <img
+          src="./static/images/graphicalAbstract2.png"
+          alt="Graphical Abstract"
+          style="width: 100%; height: auto; border-radius: 8px;"
+        />
         <h2 class="subtitle has-text-centered">
           <span class="dnerf">ESCAPE</span> provides a unified dataset, tasks, and evaluation for multilabel AMP classification.
         </h2>
@@ -140,6 +205,7 @@
         </div>
       </div>
 
+      <!-- Overview Video -->
       <div id="video" class="columns is-centered has-text-centered" style="margin-top: 2rem;">
         <div class="column is-four-fifths">
           <h2 class="title is-3">Overview Video</h2>
@@ -151,6 +217,7 @@
     </div>
   </section>
 
+  <!-- short divider after Overview Video -->
   <hr class="section-divider" />
 
   <!-- DATABASE -->
@@ -159,7 +226,7 @@
       <h2 class="title is-3">ESCAPE Database</h2>
       <div class="content has-text-justified">
         <p>
-          The <strong>ESCAPE Dataset</strong> compiles over 80,000 peptide sequences from 27 validated public repositories to address data fragmentation and inconsistent annotation. It distinguishes antimicrobial peptides from negatives and structures their labels across four activity types.
+          The <strong>ESCAPE Dataset</strong> integrates over 80,000 peptide sequences from 27 validated public repositories to address critical limitations in existing AMP resources, including data fragmentation, inconsistent annotations, and limited functional coverage. It distinguishes antimicrobial peptides from negative sequences and organizes their functional annotations into a biologically meaningful multilabel hierarchy, covering antibacterial, antifungal, antiviral, and antiparasitic activities. The dataset comprises 21,409 experimentally validated AMPs and 60,950 non-AMPs filtered from unrelated sources.
         </p>
       </div>
 
@@ -167,6 +234,7 @@
         <img src="./static/images/STATS.png" width="800" alt="ESCAPE dataset statistics" />
       </p>
 
+      <!-- concise explanatory paragraph (no "Figure 2" label) -->
       <p class="content has-text-justified" style="margin-top:0.5rem;">
         ESCAPE integrates peptides from 27 curated databases across antibacterial, antifungal, antiviral, and antiparasitic functions, reflecting mechanisms such as membrane disruption and inhibition of cell-wall biosynthesis. Non-AMP sequences are selected from UniProt and curated negatives following a TransImbAMP-style filter, excluding antimicrobial-related keywords to build a high-confidence negative set. The figure summarizes activity distribution, sequence-length profiles for AMPs vs. non-AMPs, and split counts (train/validation/test).
       </p>
@@ -177,6 +245,7 @@
     </div>
   </section>
 
+  <!-- short divider after ESCAPE Database -->
   <hr class="section-divider" />
 
   <!-- BENCHMARK -->
@@ -201,20 +270,21 @@
             </tr>
           </thead>
           <tbody>
-            <tr><td>AMPs-Net</td><td>GCN</td><td><a href="https://github.com/BCV-Uniandes/AMPs-Net" target="_blank">GitHub</a></td><td>57.7 ± 0.70</td><td>54.6 ± 0.86</td></tr>
-            <tr><td>TransImbAMP</td><td>Transformer-Based</td><td><a href="https://github.com/BiOmicsLab/TransImbAMP" target="_blank">GitHub</a></td><td>62.0 ± 0.70</td><td>64.9 ± 1.11</td></tr>
-            <tr><td>AMP-BERT</td><td>BERT</td><td><a href="https://github.com/GIST-CSBL/AMP-BERT" target="_blank">GitHub</a></td><td>64.7 ± 0.64</td><td>66.9 ± 1.17</td></tr>
-            <tr><td>amPEPpy</td><td>Random Forest (RF)</td><td><a href="https://github.com/tlawrence3/amPEPpy" target="_blank">GitHub</a></td><td>66.5 ± 0.37</td><td>68.5 ± 0.48</td></tr>
-            <tr><td>PEP-Net</td><td>Transformer-Based</td><td><a href="https://github.com/hjy23/PepNet" target="_blank">GitHub</a></td><td>65.5 ± 0.61</td><td>68.4 ± 0.53</td></tr>
+            <tr><td>AMPs-Net</td><td>GCN</td><td><a href="https://github.com/BCV-Uniandes/AMPs-Net" target="_blank" rel="noopener">GitHub</a></td><td>57.7 ± 0.70</td><td>54.6 ± 0.86</td></tr>
+            <tr><td>TransImbAMP</td><td>Transformer-Based</td><td><a href="https://github.com/BiOmicsLab/TransImbAMP" target="_blank" rel="noopener">GitHub</a></td><td>62.0 ± 0.70</td><td>64.9 ± 1.11</td></tr>
+            <tr><td>AMP-BERT</td><td>BERT</td><td><a href="https://github.com/GIST-CSBL/AMP-BERT" target="_blank" rel="noopener">GitHub</a></td><td>64.7 ± 0.64</td><td>66.9 ± 1.17</td></tr>
+            <tr><td>amPEPpy</td><td>Random Forest (RF)</td><td><a href="https://github.com/tlawrence3/amPEPpy" target="_blank" rel="noopener">GitHub</a></td><td>66.5 ± 0.37</td><td>68.5 ± 0.48</td></tr>
+            <tr><td>PEP-Net</td><td>Transformer-Based</td><td><a href="https://github.com/hjy23/PepNet" target="_blank" rel="noopener">GitHub</a></td><td>65.5 ± 0.61</td><td>68.4 ± 0.53</td></tr>
             <tr><td>AVP-IFT</td><td>Contrastive-Learning + Transformer</td><td>GitHub</td><td>66.5 ± 0.59</td><td>68.8 ± 0.50</td></tr>
-            <tr><td>AMPlify</td><td>Bi-LSTM with attention layers</td><td><a href="https://github.com/bcgsc/AMPlify" target="_blank">GitHub</a></td><td>68.5 ± 0.77</td><td>70.3 ± 0.87</td></tr>
-            <tr><td><strong>ESCAPE Baseline (ours)</strong></td><td>Dual-branch transformer</td><td><a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank">GitHub</a></td><td><strong>69.8 ± 0.43</strong></td><td><strong>72.1 ± 0.60</strong></td></tr>
+            <tr><td>AMPlify</td><td>Bi-LSTM with attention layers</td><td><a href="https://github.com/bcgsc/AMPlify" target="_blank" rel="noopener">GitHub</a></td><td>68.5 ± 0.77</td><td>70.3 ± 0.87</td></tr>
+            <tr><td><strong>ESCAPE Baseline (ours)</strong></td><td>Dual-branch transformer</td><td><a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank" rel="noopener">GitHub</a></td><td><strong>69.8 ± 0.43</strong></td><td><strong>72.1 ± 0.60</strong></td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
+  <!-- short divider after ESCAPE Benchmark -->
   <hr class="section-divider" />
 
   <!-- BASELINE -->
@@ -257,4 +327,10 @@
         <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
           <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
         </a><br />
-        Licensed under <a
+        Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
