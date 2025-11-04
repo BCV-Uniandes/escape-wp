@@ -4,15 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- =====================
-       ESCAPE — PAGE META
-       ===================== -->
   <title>ESCAPE: A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification</title>
   <meta name="application-name" content="escape-wp" />
   <meta name="description" content="ESCAPE is a standardized, multilabel benchmark for antimicrobial peptide (AMP) classification with unified datasets, tasks, and evaluation." />
   <meta name="keywords" content="ESCAPE, antimicrobial peptides, AMPs, multilabel classification, benchmark, machine learning, bioinformatics" />
 
-  <!-- Open Graph / Twitter (update URLs & images) -->
   <meta property="og:title" content="ESCAPE: A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification" />
   <meta property="og:description" content="A unified benchmark and dataset suite for multilabel AMP classification." />
   <meta property="og:type" content="website" />
@@ -20,26 +16,20 @@
   <meta property="og:url" content="https://bcv-uniandes.github.io/escape-wp/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet" />
   <link rel="stylesheet" href="./static/css/bulma.min.css" />
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css" />
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css" />
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
   <link rel="stylesheet" href="./static/css/index.css" />
   <link rel="icon" href="./static/images/favicon-escape.svg" />
 
-  <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 
-  <!-- Tighten only the spacing around the intro paragraph and the Abstract top -->
   <style>
-    /* Reduce space BEFORE and AFTER the ESCAPE intro paragraph */
     #intro.section {
       padding-top: 0.75rem !important;
       padding-bottom: 0.75rem !important;
@@ -53,13 +43,9 @@
     #intro .content hr {
       margin: 0.5rem 0 !important;
     }
-
-    /* Also trim the teaser hero bottom padding a bit so it doesn't add extra gap above the intro */
     .hero.teaser .hero-body {
       padding-bottom: 1rem !important;
     }
-
-    /* Trim the TOP padding of the Abstract section only */
     #abstract.section {
       padding-top: 0.75rem !important;
     }
@@ -67,226 +53,91 @@
 </head>
 
 <body>
-  <!-- =====================
-       NAVBAR
-       ===================== -->
+  <!-- NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span>
       </a>
     </div>
-
     <div class="navbar-menu">
       <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-        <a class="navbar-item" href="#top" aria-label="Home">
-          <span class="icon"><i class="fas fa-home"></i></span>
-        </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">Sections</a>
-          <div class="navbar-dropdown">
-            <a class="navbar-item" href="#intro">Overview</a>
-            <a class="navbar-item" href="#database">ESCAPE Database</a>
-            <a class="navbar-item" href="#benchmark">ESCAPE Benchmark</a>
-            <a class="navbar-item" href="#getting-started">Getting Started</a>
-            <a class="navbar-item" href="#baseline">ESCAPE Baseline</a>
-            <a class="navbar-item" href="#evaluation">Evaluation</a>
-            <a class="navbar-item" href="#dataset">Dataset Card</a>
-            <a class="navbar-item" href="#leaderboard">Leaderboard</a>
-            <a class="navbar-item" href="#BibTeX">BibTeX</a>
-            <a class="navbar-item" href="#license">License</a>
-          </div>
-        </div>
+        <a class="navbar-item" href="#top"><span class="icon"><i class="fas fa-home"></i></span></a>
       </div>
     </div>
   </nav>
 
-  <!-- =====================
-       HERO
-       ===================== -->
+  <!-- HERO -->
   <section id="top" class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">ESCAPE: A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification</h1>
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">ESCAPE: A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification</h1>
 
-            <!-- Authors -->
-            <div class="is-size-5 publication-authors">
-<span class="author-block">
-  <a href="https://scholar.google.es/citations?hl=es&user=pYKjJacAAAAJ" target="_blank" rel="noopener">
-    Sebastian Ojeda
-  </a>,
-</span>
+        <div class="is-size-5 publication-authors">
+          <a href="https://scholar.google.es/citations?hl=es&user=pYKjJacAAAAJ" target="_blank">Sebastian Ojeda</a>,
+          <a href="https://scholar.google.com/citations?user=-2kE7-4AAAAJ&hl=en" target="_blank">Rafael Velasquez</a>,
+          <a href="https://scholar.google.com/citations?user=gV0OY18AAAAJ&hl=es" target="_blank">Nicolás Aparicio</a>,
+          <a href="https://scholar.google.com/citations?user=1FvyvPcAAAAJ&hl=es" target="_blank">Juanita Puentes</a>,
+          <a href="https://scholar.google.com/citations?user=M25ayQQAAAAJ&hl=es" target="_blank">Paula Cárdenas</a>,
+          <a href="https://scholar.google.com/citations?hl=es&user=E5EtX5MAAAAJ" target="_blank">Nicolás Andrade</a>,
+          <a href="https://scholar.google.com/citations?user=-5kDAz4AAAAJ&hl=es" target="_blank">Gabriel González</a>,
+          <a href="https://scholar.google.com/citations?user=GG2poZYAAAAJ&hl=es" target="_blank">Sergio Rincón</a>,
+          <a href="https://scholar.google.com/citations?user=dOIitb4AAAAJ&hl=es" target="_blank">Carolina Muñoz-Camargo</a>,
+          and <a href="https://scholar.google.com/citations?user=k0nZO90AAAAJ&hl=es" target="_blank">Pablo Arbeláez</a>
+        </div>
 
-              <span class="author-block">
-  <a href="https://scholar.google.com/citations?user=-2kE7-4AAAAJ&hl=en" target="_blank" rel="noopener">
-    Rafael Velasquez
-  </a>,
-</span>
-
-              
-<span class="author-block">
-  <a href="https://scholar.google.com/citations?user=gV0OY18AAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">
-    Nicolás Aparicio
-  </a>,
-</span>
-<span class="author-block">
-  <a href="https://scholar.google.com/citations?user=1FvyvPcAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">
-    Juanita Puentes
-  </a>,
-</span>
-<span class="author-block">
-  <a href="https://scholar.google.com/citations?user=M25ayQQAAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">
-    Paula Cárdenas
-  </a>,
-</span>
-<span class="author-block">
-  <a href="https://scholar.google.com/citations?hl=es&user=E5EtX5MAAAAJ" target="_blank" rel="noopener">
-    Nicolás Andrade
-  </a>,</span>
-<span class="author-block">
-  <a href="https://scholar.google.com/citations?user=-5kDAz4AAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">
-    Gabriel González
-  </a>,
-</span>
-<span class="author-block">
-  <a href="https://scholar.google.com/citations?user=GG2poZYAAAAJ&hl=es" target="_blank" rel="noopener">
-    Sergio Rincón
-  </a>,
-</span>
-<span class="author-block">
-  <a href="https://scholar.google.com/citations?user=dOIitb4AAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">
-    Carolina Muñoz-Camargo
-  </a>,
-</span>
-<span class="author-block">
-  and <a href="https://scholar.google.com/citations?user=k0nZO90AAAAJ&hl=es&oi=ao" target="_blank" rel="noopener">
-    Pablo Arbeláez
-  </a>
-</span>
-<div class="is-size-5 publication-authors">
-  <span class="author-block">Universidad de Los Andes, Colombia</span><br>
-  <span class="author-block" style="display: inline-block; margin-top: 10px;">
-    <strong>The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025)</strong>
-  </span>
-</div>
-
-            <!-- Links -->
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a id="paper" href="#" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                    <span>Paper (PDF)</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="ai ai-arxiv"></i></span>
-                    <span>arXiv</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#video" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-youtube"></i></span>
-                    <span>Video</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a id="code" href="https://github.com/BCV-Uniandes/ESCAPE" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fab fa-github"></i></span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C69MCD"
-   class="external-link button is-normal is-rounded is-dark"
-   target="_blank" rel="noopener">
-  <span class="icon"><i class="far fa-images"></i></span>
-  <span>Data</span>
-</a>
-                </span>
-              </div>
-            </div>
-
-          </div>
+        <div class="is-size-5 publication-authors" style="margin-top: 1rem;">
+          Universidad de Los Andes, Colombia<br>
+          <strong>The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025)</strong>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- =====================
-       TEASER (optional)
-       ===================== -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img
-        src="./static/images/graphicalAbstract2.png"
-        alt="Graphical Abstract"
-        style="width: 100%; height: auto; border-radius: 8px;"
-      />
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">ESCAPE</span> provides a unified dataset, tasks, and evaluation for multilabel AMP classification.
-      </h2>
+  <!-- TEASER -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="./static/images/graphicalAbstract2.png" alt="Graphical Abstract" style="width:100%;border-radius:8px;" />
+        <h2 class="subtitle has-text-centered">
+          <span class="dnerf">ESCAPE</span> provides a unified dataset, tasks, and evaluation for multilabel AMP classification.
+        </h2>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- =====================
-       OVERVIEW / INTRO
-       ===================== -->
+  <!-- OVERVIEW -->
   <section id="intro" class="section">
     <div class="container is-max-desktop">
       <div class="content">
         <hr>
-        <p><strong>Expanded Standardized Collection for Antimicrobial Peptide Evaluation (ESCAPE)</strong> is an experimental framework for multilabel antimicrobial peptide classification. It combines a large-scale curated dataset, a benchmark for evaluating models, and a transformer-based baseline that integrates both sequence and structural information.</p>
+        <p><strong>Expanded Standardized Collection for Antimicrobial Peptide Evaluation (ESCAPE)</strong> is an experimental framework for multilabel antimicrobial peptide classification. It combines a curated dataset, a benchmark, and a transformer-based baseline integrating both sequence and structural information.</p>
         <hr>
       </div>
     </div>
   </section>
 
-  <!-- =====================
-       ABSTRACT
-       ===================== -->
+  <!-- ABSTRACT -->
   <section id="abstract" class="section">
     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Antimicrobial peptides have emerged as promising molecules to combat antimicrobial resistance. However, fragmented datasets, inconsistent annotations, and the lack of standardized benchmarks hinder computational approaches and slow down the discovery of new candidates. To address these challenges, we present the Expanded Standardized Collection for Antimicrobial Peptide Evaluation (ESCAPE), an experimental framework integrating over 80,000 peptides from 27 validated repositories. Our dataset separates antimicrobial peptides from negative sequences and incorporates their functional annotations into a biologically coherent multilabel hierarchy, capturing activities across antibacterial, antifungal, antiviral, and antiparasitic classes. Building on ESCAPE, we propose a transformer-based model that leverages sequence and structural information to predict multiple functional activities of peptides. Our method achieves up to a 2.56% relative average improvement in mean Average Precision over the second-best method adapted for this task, establishing a new state of the art in multilabel peptide classification. ESCAPE provides a comprehensive and reproducible evaluation framework to advance AI-driven antimicrobial peptide research. The ESCAPE dataset is available <a href="https://doi.org/10.7910/DVN/C69MCD" target="_blank">HERE</a> and the baseline code <a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank">HERE</a>.
-            </p>
-          </div>
-        </div>
+      <div class="has-text-centered">
+        <h2 class="title is-3">Abstract</h2>
       </div>
-
-      <!-- Video (optional) -->
-      <div id="video" class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Overview Video</h2>
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
+      <div class="content has-text-justified">
+        <p>
+          Antimicrobial peptides have emerged as promising molecules to combat antimicrobial resistance. However, fragmented datasets and inconsistent annotations hinder computational approaches. We present the ESCAPE framework integrating over 80 000 peptides from 27 validated repositories. It separates AMPs from negatives and organizes activities across antibacterial, antifungal, antiviral, and antiparasitic classes. Our transformer-based model leveraging sequence and structure achieves a 2.56 % improvement in mean AP over prior methods. ESCAPE provides a comprehensive, reproducible evaluation platform for AI-driven peptide discovery. The dataset is available <a href="https://doi.org/10.7910/DVN/C69MCD" target="_blank">here</a> and the baseline code <a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank">here</a>.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- =====================
-       ESCAPE DATABASE
-       ===================== -->
+  <!-- ESCAPE DATABASE -->
   <section id="database" class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">ESCAPE Database</h2>
       <div class="content has-text-justified">
         <p>
-          The <strong>ESCAPE Dataset</strong> integrates over 80,000 peptide sequences from 27 validated public repositories to address critical limitations in existing AMP resources, including data fragmentation, inconsistent annotations, and limited functional coverage. It distinguishes antimicrobial peptides from negative sequences and organizes their functional annotations into a biologically meaningful multilabel hierarchy, covering antibacterial, antifungal, antiviral, and antiparasitic activities. The dataset comprises 21,409 experimentally validated AMPs and 60,950 non-AMPs filtered from unrelated sources.
+          The <strong>ESCAPE Dataset</strong> compiles over 80 000 sequences from 27 public repositories, addressing data fragmentation and inconsistent annotation. It separates AMPs from non-AMPs and structures functional labels hierarchically across four activity types.
         </p>
       </div>
 
@@ -294,117 +145,25 @@
         <img src="./static/images/STATS.png" width="800" alt="ESCAPE dataset statistics" />
       </p>
 
-      <!-- NEW: concise figure caption and dataset construction summary -->
-      <p class="content has-text-centered is-size-6" style="margin-top: 0.75rem;">
-        <strong>Figure 2.</strong> Overview of ESCAPE Dataset composition and statistics: (a) multilabel distribution across antibacterial, antifungal, antiviral, and antiparasitic classes; (b) sequence-length distributions for AMPs and non-AMPs; and (c) counts across train/validation folds and the test set.
-      </p>
-
-      <p class="content has-text-justified" style="margin-top: 0.5rem;">
-        To build ESCAPE, we integrated experimentally validated and manually curated peptides from 27 public databases—BIOPEP-UWM, CPPsite 2.0, CAMPR3, TumorHoPe, APD3, SPdb, ParaPep, CancerPPD, BrainPreps, Quorumpeps, YADAMP, LAMP2, Milkampdb, DADP, AntiTbPdb, PeptideDB, NeuroPrep, SATPdb, BioDADPep, NeuroPedia, DFBP, dbAMP 3.0, DRAMP 4.0, AVPdb, Hemolytik, DBAASP v3, and UniProt—covering antibacterial, antifungal, antiviral, and antiparasitic activities and mechanisms such as membrane disruption, inhibition of cell-wall biosynthesis, and interference with viral assembly. Non-AMP sequences follow the TransImbAMP strategy: selection from UniProt and curated non-antimicrobial sources with strict exclusion of keywords (e.g., “membrane,” “toxic,” “secretory,” “defensive,” “antibiotic,” “anticancer,” “antiviral,” “antifungal”) to form a high-confidence negative set.
+      <!-- concise explanatory paragraph -->
+      <p class="content has-text-justified" style="margin-top:0.5rem;">
+        ESCAPE integrates peptides from 27 curated databases covering antibacterial, antifungal, antiviral, and antiparasitic functions, capturing diverse mechanisms such as membrane disruption and inhibition of cell-wall biosynthesis. Non-AMP sequences were selected from UniProt and curated negatives following the TransImbAMP filtering approach, excluding entries with antimicrobial-related keywords to ensure a high-confidence contrast between positive and negative sets.
       </p>
 
       <p class="content">
-        The ESCAPE Dataset is available for download. You can access the complete ESCAPE Database on
-        <a href="https://doi.org/10.7910/DVN/C69MCD" target="_blank" rel="noopener">Harvard Dataverse</a>.
+        The ESCAPE dataset is available on <a href="https://doi.org/10.7910/DVN/C69MCD" target="_blank" rel="noopener">Harvard Dataverse</a>.
       </p>
       <hr />
     </div>
   </section>
 
-  <!-- =====================
-       ESCAPE BENCHMARK
-       ===================== -->
-  <section id="benchmark" class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">ESCAPE Benchmark</h2>
-      <div class="content has-text-justified">
-        <p>
-          We evaluate six representative models for antimicrobial peptide classification: <strong>AMPlify, AMP BERT, TransImbAMP, amPEPpy, AMPs Net,</strong> and <strong>PEP Net</strong>, using the multilabel framework defined by ESCAPE. Each model was modified to support multilabel classification and trained with two fold cross validation. We report final performance by averaging predictions from both folds through an ensemble strategy. Evaluation uses two standard metrics for multilabel tasks: F1 score and mean Average Precision, which are suitable for datasets with class imbalance.
-        </p>
-        <p>
-          The table below summarizes the key methods for antimicrobial peptide classification of the ESCAPE Benchmark, their primary architectures, GitHub repositories, and the F1-score and mean Average Precision (mAP) these methods achieve by evaluating them on the ESCAPE Dataset.
-        </p>
-      </div>
-
-      <div class="table-container">
-        <table class="table is-striped is-hoverable is-fullwidth">
-          <thead>
-            <tr>
-              <th>Method</th>
-              <th>Primary Architecture</th>
-              <th>GitHub Repository</th>
-              <th>F1-score (%)</th>
-              <th>mAP (%)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Amps-Net</td>
-              <td>GCN</td>
-              <td><a href="https://github.com/BCV-Uniandes/AMPs-Net" target="_blank" rel="noopener">GitHub</a></td>
-              <td>57.7</td>
-              <td>54.2</td>
-            </tr>
-            <tr>
-              <td>TransImbAMP</td>
-              <td>Transformer-Based</td>
-              <td><a href="https://github.com/BiOmicsLab/TransImbAMP" target="_blank" rel="noopener">GitHub</a></td>
-              <td>61.9</td>
-              <td>64.9</td>
-            </tr>
-            <tr>
-              <td>AMP-BERT</td>
-              <td>BERT</td>
-              <td><a href="https://github.com/GIST-CSBL/AMP-BERT" target="_blank" rel="noopener">GitHub</a></td>
-              <td>66.1</td>
-              <td>66.2</td>
-            </tr>
-            <tr>
-              <td>amPEPpy</td>
-              <td>Random Forest (RF)</td>
-              <td><a href="https://github.com/tlawrence3/amPEPpy" target="_blank" rel="noopener">GitHub</a></td>
-              <td>65.0</td>
-              <td>68.0</td>
-            </tr>
-            <tr>
-              <td>PEP-Net</td>
-              <td>Transformer-Based</td>
-              <td><a href="https://github.com/hjy23/PepNet" target="_blank" rel="noopener">GitHub</a></td>
-              <td>65.2</td>
-              <td>68.2</td>
-            </tr>
-            <tr>
-              <td>AMPlify</td>
-              <td>Bi-LSTM with attention layers</td>
-              <td><a href="https://github.com/bcgsc/AMPlify" target="_blank" rel="noopener">GitHub</a></td>
-              <td>68.9</td>
-              <td>71.1</td>
-            </tr>
-            <tr>
-              <td><strong>ESCAPE</strong></td>
-              <td>Dual-branch transformer</td>
-              <td><a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank" rel="noopener">GitHub</a></td>
-              <td><strong>69.5</strong></td>
-              <td><strong>72.7</strong></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <hr />
-    </div>
-  </section>
-
-
-
-  <!-- =====================
-       ESCAPE BASELINE
-       ===================== -->
+  <!-- BASELINE -->
   <section id="baseline" class="section">
     <div class="container is-max-desktop">
       <h2 class="title is-3">ESCAPE Baseline</h2>
       <div class="content has-text-justified">
         <p>
-          The <strong>ESCAPE Baseline</strong> is a dual-branch transformer architecture designed to classify antimicrobial peptides (AMPs) using both sequence and structural information. It processes amino acid sequences through a transformer encoder and structural representations through a second branch that encodes peptide distance matrices. These two modalities are fused using a bidirectional cross-attention mechanism, enabling the model to capture both biological context and spatial structure. This approach achieves state-of-the-art overall performance on the ESCAPE Benchmark, outperforming existing methods in both F1-score and mean Average Precision.
+          The <strong>ESCAPE Baseline</strong> is a dual-branch transformer using sequence and structural information. Amino-acid sequences are processed through one encoder, while peptide distance matrices feed another; bidirectional cross-attention fuses modalities, yielding state-of-the-art multilabel performance.
         </p>
       </div>
 
@@ -414,9 +173,7 @@
     </div>
   </section>
 
-  <!-- =====================
-       BIBTEX
-       ===================== -->
+  <!-- BIBTEX -->
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
@@ -430,34 +187,17 @@
     </div>
   </section>
 
-  <!-- =====================
-       FOOTER / LICENSE
-       ===================== -->
+  <!-- FOOTER -->
   <footer class="footer" id="license">
-    <div class="container">
-      <div class="content has-text-centered">
-        <a class="icon-link" href="#" title="Paper">
-          <i class="fas fa-file-pdf" aria-hidden="true"></i>
-          <span class="is-sr-only">Paper</span>
-        </a>
-        <a class="icon-link" href="https://github.com/BCV-Uniandes/ESCAPE" class="external-link" title="GitHub">
-          <i class="fab fa-github" aria-hidden="true"></i>
-          <span class="is-sr-only">GitHub</span>
-        </a>
-      </div>
-
-      <div class="columns is-centered">
-        <div class="column is-8">
-          <div class="content has-text-centered">
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
-              <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-            </a><br />
-            This work is licensed under a
-            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">
-              Creative Commons Attribution-ShareAlike 4.0 International License
-            </a>.
-          </div>
-        </div>
+    <div class="container has-text-centered">
+      <a class="icon-link" href="https://github.com/BCV-Uniandes/ESCAPE" title="GitHub">
+        <i class="fab fa-github" aria-hidden="true"></i>
+      </a>
+      <div class="content is-small">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
+          <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+        </a><br />
+        Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
       </div>
     </div>
   </footer>
