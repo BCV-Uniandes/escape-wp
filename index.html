@@ -254,7 +254,10 @@
       <h2 class="title is-3">ESCAPE Benchmark</h2>
       <div class="content has-text-justified">
         <p>
-          We evaluate representative models for antimicrobial peptide classification using the multilabel framework defined by ESCAPE. All baselines are adapted to multilabel outputs and trained with two-fold cross-validation; final metrics report mean ± std across folds.
+          The benchmark standardizes multilabel AMP evaluation across tasks, splits, metrics, and reporting. All baselines are adapted to predict the four activity labels (antibacterial, antifungal, antiviral, antiparasitic) jointly. We employ fixed, publicly released train/validation folds and a held-out test set to ensure comparability and prevent leakage.
+        </p>
+        <p>
+          Models are trained with identical preprocessing and split definitions. We report <em>macro</em> F1 and mean Average Precision (mAP), which are robust to class imbalance. For thresholded metrics (F1), a per-class decision threshold is selected on the validation fold; for ranking metrics (mAP), we use raw scores without thresholds. Each method is trained with two-fold cross-validation on the training portion, and we ensemble predictions across folds to produce final scores. Results are presented as <code>mean ± std</code> over folds to reflect variability.
         </p>
       </div>
 
@@ -275,7 +278,7 @@
             <tr><td>AMP-BERT</td><td>BERT</td><td><a href="https://github.com/GIST-CSBL/AMP-BERT" target="_blank" rel="noopener">GitHub</a></td><td>64.7 ± 0.64</td><td>66.9 ± 1.17</td></tr>
             <tr><td>amPEPpy</td><td>Random Forest (RF)</td><td><a href="https://github.com/tlawrence3/amPEPpy" target="_blank" rel="noopener">GitHub</a></td><td>66.5 ± 0.37</td><td>68.5 ± 0.48</td></tr>
             <tr><td>PEP-Net</td><td>Transformer-Based</td><td><a href="https://github.com/hjy23/PepNet" target="_blank" rel="noopener">GitHub</a></td><td>65.5 ± 0.61</td><td>68.4 ± 0.53</td></tr>
-            <tr><td>AVP-IFT</td><td>Contrastive-Learning + Transformer</td><td>GitHub</td><td>66.5 ± 0.59</td><td>68.8 ± 0.50</td></tr>
+            <tr><td>AVP-IFT</td><td>Contrastive-Learning + Transformer</td><td><a href="https://github.com/GGCL7/AVP-IFT?tab=readme-ov-file" target="_blank" rel="noopener">GitHub</a></td><td>66.5 ± 0.59</td><td>68.8 ± 0.50</td></tr>
             <tr><td>AMPlify</td><td>Bi-LSTM with attention layers</td><td><a href="https://github.com/bcgsc/AMPlify" target="_blank" rel="noopener">GitHub</a></td><td>68.5 ± 0.77</td><td>70.3 ± 0.87</td></tr>
             <tr><td><strong>ESCAPE Baseline (ours)</strong></td><td>Dual-branch transformer</td><td><a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank" rel="noopener">GitHub</a></td><td><strong>69.8 ± 0.43</strong></td><td><strong>72.1 ± 0.60</strong></td></tr>
           </tbody>
@@ -295,6 +298,10 @@
         <p>
           The <strong>ESCAPE Baseline</strong> is a dual-branch transformer that classifies antimicrobial peptides using both sequence and structural information. Sequence and structure encoders interact through bidirectional cross-attention, achieving state-of-the-art multilabel performance.
         </p>
+        <!-- Added deeper, but concise description -->
+        <p>
+          <em>Sequence branch.</em> Amino-acid tokens are embedded and processed by a Transformer encoder to model local and long-range dependencies across the peptide chain. <em>Structure branch.</em> We derive pairwise distance matrices from available 3D information and tokenize them into patches that a parallel Transformer encoder processes to capture spatial organization. <em>Multimodal fusion.</em> A bidirectional cross-attention layer lets sequence attend to structure and vice versa, producing fused representations for multilabel classification across antibacterial, antifungal, antiviral, and antiparasitic activities. <em>Training & evaluation.</em> We use AdamW, standard regularization, and the same folds/metrics defined by the ESCAPE benchmark; ensembling across folds yields the reported scores. In ablations, the multimodal model consistently outperforms sequence-only or structure-only variants on both F1 and mAP, highlighting the complementary value of structural cues.
+        </p>
       </div>
 
       <p class="has-text-centered">
@@ -303,7 +310,7 @@
     </div>
   </section>
 
-  <!-- short divider BEFORE BibTeX (added, compact spacing) -->
+  <!-- short divider BEFORE BibTeX (compact spacing) -->
   <hr class="section-divider" />
 
   <!-- BIBTEX -->
