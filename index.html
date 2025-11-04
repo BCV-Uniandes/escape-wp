@@ -30,7 +30,7 @@
   <script src="./static/js/index.js"></script>
 
   <style>
-    /* Tighten intro spacing a bit */
+    /* Tighten intro spacing */
     #intro.section { padding-top: 0.75rem !important; padding-bottom: 0.75rem !important; }
     #intro .content { margin: 0 !important; }
     #intro .content p { margin: 0.5rem 0 !important; }
@@ -40,15 +40,15 @@
     /* Space between authors and affiliation */
     .publication-authors + .publication-authors { margin-top: 1rem !important; }
 
-    /* Short, centered section divider with compact spacing */
+    /* Compact divider */
     .section-divider {
       border: none;
       border-top: 1px solid #ddd;
       width: 60%;
-      margin: 0.5rem auto; /* compact space before/after each line */
+      margin: 0.5rem auto;
     }
 
-    /* Force white text inside the dark action buttons (and on hover/focus) */
+    /* Force white text inside dark buttons */
     .publication-links .button.is-dark,
     .publication-links .button.is-dark span,
     .publication-links .button.is-dark i {
@@ -58,12 +58,6 @@
     .publication-links .button.is-dark:focus,
     .publication-links .button.is-dark:active {
       color: #fff !important;
-    }
-    /* Also guard against link default color inside buttons */
-    .publication-links .button.is-dark a,
-    .publication-links .button.is-dark a span {
-      color: #fff !important;
-      text-decoration: none !important;
     }
   </style>
 </head>
@@ -116,47 +110,21 @@
           and <a href="https://scholar.google.com/citations?user=k0nZO90AAAAJ&hl=es" target="_blank">Pablo Arbeláez</a>
         </div>
 
-        <!-- Space between authors and affiliation is controlled via CSS above -->
         <div class="is-size-5 publication-authors">
           Universidad de Los Andes, Colombia<br>
           <strong>The Thirty-ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025)</strong>
         </div>
 
+        <hr class="section-divider" />
+
         <!-- Links -->
         <div class="column has-text-centered" style="margin-top: 1rem;">
           <div class="publication-links">
-            <span class="link-block">
-              <a id="paper" href="#" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                <span>Paper (PDF)</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="#" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="ai ai-arxiv"></i></span>
-                <span>arXiv</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="#video" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fab fa-youtube"></i></span>
-                <span>Video</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a id="code" href="https://github.com/BCV-Uniandes/ESCAPE" class="external-link button is-normal is-rounded is-dark">
-                <span class="icon"><i class="fab fa-github"></i></span>
-                <span>Code</span>
-              </a>
-            </span>
-            <span class="link-block">
-              <a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C69MCD"
-                 class="external-link button is-normal is-rounded is-dark"
-                 target="_blank" rel="noopener">
-                <span class="icon"><i class="far fa-images"></i></span>
-                <span>Data</span>
-              </a>
-            </span>
+            <span class="link-block"><a id="paper" href="#" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper (PDF)</span></a></span>
+            <span class="link-block"><a href="#" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span></a></span>
+            <span class="link-block"><a href="#video" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-youtube"></i></span><span>Video</span></a></span>
+            <span class="link-block"><a id="code" href="https://github.com/BCV-Uniandes/ESCAPE" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a></span>
+            <span class="link-block"><a href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/C69MCD" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener"><span class="icon"><i class="far fa-images"></i></span><span>Data</span></a></span>
           </div>
         </div>
 
@@ -168,14 +136,8 @@
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
-        <img
-          src="./static/images/graphicalAbstract2.png"
-          alt="Graphical Abstract"
-          style="width: 100%; height: auto; border-radius: 8px;"
-        />
-        <h2 class="subtitle has-text-centered">
-          <span class="dnerf">ESCAPE</span> provides a unified dataset, tasks, and evaluation for multilabel AMP classification.
-        </h2>
+        <img src="./static/images/graphicalAbstract2.png" alt="Graphical Abstract" style="width: 100%; height: auto; border-radius: 8px;" />
+        <h2 class="subtitle has-text-centered"><span class="dnerf">ESCAPE</span> provides a unified dataset, tasks, and evaluation for multilabel AMP classification.</h2>
       </div>
     </div>
   </section>
@@ -230,18 +192,13 @@
         </p>
       </div>
 
-      <p class="has-text-centered">
-        <img src="./static/images/STATS.png" width="800" alt="ESCAPE dataset statistics" />
-      </p>
+      <p class="has-text-centered"><img src="./static/images/STATS.png" width="800" alt="ESCAPE dataset statistics" /></p>
 
-      <!-- concise explanatory paragraph (no "Figure 2" label) -->
       <p class="content has-text-justified" style="margin-top:0.5rem;">
         ESCAPE integrates peptides from 27 curated databases across antibacterial, antifungal, antiviral, and antiparasitic functions, reflecting mechanisms such as membrane disruption and inhibition of cell-wall biosynthesis. Non-AMP sequences are selected from UniProt and curated negatives following a TransImbAMP-style filter, excluding antimicrobial-related keywords to build a high-confidence negative set. The figure summarizes activity distribution, sequence-length profiles for AMPs vs. non-AMPs, and split counts (train/validation/test).
       </p>
 
-      <p class="content">
-        The ESCAPE dataset is available on <a href="https://doi.org/10.7910/DVN/C69MCD" target="_blank" rel="noopener">Harvard Dataverse</a>.
-      </p>
+      <p class="content">The ESCAPE dataset is available on <a href="https://doi.org/10.7910/DVN/C69MCD" target="_blank" rel="noopener">Harvard Dataverse</a>.</p>
     </div>
   </section>
 
@@ -254,23 +211,17 @@
       <h2 class="title is-3">ESCAPE Benchmark</h2>
       <div class="content has-text-justified">
         <p>
-          The benchmark standardizes multilabel AMP evaluation across tasks, splits, metrics, and reporting. All baselines are adapted to predict the four activity labels (antibacterial, antifungal, antiviral, antiparasitic) jointly. We employ fixed, publicly released train/validation folds and a held-out test set to ensure comparability and prevent leakage.
+          The benchmark enforces a unified multilabel evaluation protocol on the shared label space (antibacterial, antifungal, antiviral, antiparasitic) with fixed public splits. Each baseline is trained under the same preprocessing and split definitions, and <strong>all reported numbers are computed on the held-out test set</strong>.
         </p>
         <p>
-          Models are trained with identical preprocessing and split definitions. We report <em>macro</em> F1 and mean Average Precision (mAP), which are robust to class imbalance. For thresholded metrics (F1), a per-class decision threshold is selected on the validation fold; for ranking metrics (mAP), we use raw scores without thresholds. Each method is trained with two-fold cross-validation on the training portion, and we ensemble predictions across folds to produce final scores. Results are presented as <code>mean ± std</code> over folds to reflect variability.
+          To assess robustness, <strong>every method is run with multiple random seeds</strong> (different parameter initializations and shuffling). We report <code>mean ± std</code> across seeds. For <em>F1</em>, per-class decision thresholds are selected on the validation split for each seed and then applied to the test set. For <em>mAP</em>, ranking is computed directly from raw scores without thresholding. This seed-based evaluation isolates variability due to optimization and initialization, not due to changing the data splits.
         </p>
       </div>
 
       <div class="table-container">
         <table class="table is-striped is-hoverable is-fullwidth">
           <thead>
-            <tr>
-              <th>Method</th>
-              <th>Primary Architecture</th>
-              <th>GitHub Repository</th>
-              <th>F1-score (%)</th>
-              <th>mAP (%)</th>
-            </tr>
+            <tr><th>Method</th><th>Primary Architecture</th><th>GitHub Repository</th><th>F1-score (%)</th><th>mAP (%)</th></tr>
           </thead>
           <tbody>
             <tr><td>AMPs-Net</td><td>GCN</td><td><a href="https://github.com/BCV-Uniandes/AMPs-Net" target="_blank" rel="noopener">GitHub</a></td><td>57.7 ± 0.70</td><td>54.6 ± 0.86</td></tr>
@@ -279,68 +230,4 @@
             <tr><td>amPEPpy</td><td>Random Forest (RF)</td><td><a href="https://github.com/tlawrence3/amPEPpy" target="_blank" rel="noopener">GitHub</a></td><td>66.5 ± 0.37</td><td>68.5 ± 0.48</td></tr>
             <tr><td>PEP-Net</td><td>Transformer-Based</td><td><a href="https://github.com/hjy23/PepNet" target="_blank" rel="noopener">GitHub</a></td><td>65.5 ± 0.61</td><td>68.4 ± 0.53</td></tr>
             <tr><td>AVP-IFT</td><td>Contrastive-Learning + Transformer</td><td><a href="https://github.com/GGCL7/AVP-IFT?tab=readme-ov-file" target="_blank" rel="noopener">GitHub</a></td><td>66.5 ± 0.59</td><td>68.8 ± 0.50</td></tr>
-            <tr><td>AMPlify</td><td>Bi-LSTM with attention layers</td><td><a href="https://github.com/bcgsc/AMPlify" target="_blank" rel="noopener">GitHub</a></td><td>68.5 ± 0.77</td><td>70.3 ± 0.87</td></tr>
-            <tr><td><strong>ESCAPE Baseline (ours)</strong></td><td>Dual-branch transformer</td><td><a href="https://github.com/BCV-Uniandes/ESCAPE" target="_blank" rel="noopener">GitHub</a></td><td><strong>69.8 ± 0.43</strong></td><td><strong>72.1 ± 0.60</strong></td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- short divider after ESCAPE Benchmark -->
-  <hr class="section-divider" />
-
-  <!-- BASELINE -->
-  <section id="baseline" class="section">
-    <div class="container is-max-desktop">
-      <h2 class="title is-3">ESCAPE Baseline</h2>
-      <div class="content has-text-justified">
-        <p>
-          The <strong>ESCAPE Baseline</strong> is a dual-branch transformer that classifies antimicrobial peptides using both sequence and structural information. Sequence and structure encoders interact through bidirectional cross-attention, achieving state-of-the-art multilabel performance.
-        </p>
-        <!-- Added deeper, but concise description -->
-        <p>
-          <em>Sequence branch.</em> Amino-acid tokens are embedded and processed by a Transformer encoder to model local and long-range dependencies across the peptide chain. <em>Structure branch.</em> We derive pairwise distance matrices from available 3D information and tokenize them into patches that a parallel Transformer encoder processes to capture spatial organization. <em>Multimodal fusion.</em> A bidirectional cross-attention layer lets sequence attend to structure and vice versa, producing fused representations for multilabel classification across antibacterial, antifungal, antiviral, and antiparasitic activities. <em>Training & evaluation.</em> We use AdamW, standard regularization, and the same folds/metrics defined by the ESCAPE benchmark; ensembling across folds yields the reported scores. In ablations, the multimodal model consistently outperforms sequence-only or structure-only variants on both F1 and mAP, highlighting the complementary value of structural cues.
-        </p>
-      </div>
-
-      <p class="has-text-centered">
-        <img src="./static/images/architecture.png" width="800" alt="ESCAPE baseline architecture" />
-      </p>
-    </div>
-  </section>
-
-  <!-- short divider BEFORE BibTeX (compact spacing) -->
-  <hr class="section-divider" />
-
-  <!-- BIBTEX -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{escape2025,
-  author  = {Sebastian Ojeda and Rafael Velasquez and Nicolás Aparicio and Juanita Puentes and Paula Cárdenas and Nicolás Andrade and Gabriel González and Sergio Rincón and Carolina Muñoz-Camargo and Pablo Arbeláez},
-  title   = {ESCAPE: A Standardized Benchmark for Multilabel Antimicrobial Peptide Classification},
-  journal = {Preprint},
-  year    = {2025},
-  url     = {https://bcv-uniandes.github.io/escape-wp/}
-}</code></pre>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer" id="license">
-    <div class="container has-text-centered">
-      <a class="icon-link" href="https://github.com/BCV-Uniandes/ESCAPE" title="GitHub">
-        <i class="fab fa-github" aria-hidden="true"></i>
-      </a>
-      <div class="content is-small">
-        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">
-          <img alt="Creative Commons License" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-        </a><br />
-        Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
-      </div>
-    </div>
-  </footer>
-
-</body>
-</html>
+            <tr><td>AMPlify</td><td>Bi-LSTM with attention layers</td><td><a href="https://
